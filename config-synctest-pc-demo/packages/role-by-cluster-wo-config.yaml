@@ -1,0 +1,11 @@
+kind: Role
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  namespace: krikor
+  name: namespace-reader
+  annotations:
+    configsync.gke.io/cluster-name-selector: fleet-cluster-01,non-fleet-project-cluster
+rules:
+- apiGroups: [""]
+  resources: ["namespaces"]
+  verbs: ["get", "watch", "list"]

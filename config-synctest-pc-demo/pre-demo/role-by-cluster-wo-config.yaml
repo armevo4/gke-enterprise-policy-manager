@@ -1,0 +1,11 @@
+kind: Role
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  namespace: armenia
+  name: namespace-reader
+  annotations:
+    configsync.gke.io/cluster-name-selector: non-fleet-gcp-cluster
+rules:
+- apiGroups: [""]
+  resources: ["namespaces"]
+  verbs: ["get", "watch", "list"]

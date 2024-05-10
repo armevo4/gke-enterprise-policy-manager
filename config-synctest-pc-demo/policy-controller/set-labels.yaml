@@ -1,0 +1,15 @@
+apiVersion: mutations.gatekeeper.sh/v1alpha1
+kind: AssignMetadata
+metadata:
+  name: add-labels-team
+spec:
+  match:
+    scope: Namespaced
+    excludedNamespaces: ["dhl-1"]
+    labelSelector:
+      matchLabels:
+        app: "nginx"
+  location: "metadata.labels.team"
+  parameters:
+    assign:
+      value: "dhl"
