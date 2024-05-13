@@ -5,7 +5,7 @@ metadata:
 spec:
   applyTo:
   - groups: [""]
-    kinds: ["Pod"]
+    kinds: ["Pod", "Deployment"]
     versions: ["v1"]
   location: "spec.containers[name: *].imagePullPolicy"
   parameters:
