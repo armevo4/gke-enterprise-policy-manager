@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-never-pull-pod
+  labels:
+    app: my-app-np
+spec:
+  containers:
+  - name: nginx
+    image: nginx:1.23.4  # Replace with specific version if needed (recommended)
+    imagePullPolicy: Never  # Explicitly set to Never
+  restartPolicy: Always  # Restarts the pod automatically on failure

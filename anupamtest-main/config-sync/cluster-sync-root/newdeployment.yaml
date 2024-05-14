@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: anupam-test-pod  # Replace with the desired name for your pod
+spec:
+  replicas: 1  # Number of pod replicas (usually 1 for most deployments)
+  selector:
+    matchLabels:
+      app: anupam-test  # Match labels with pod container name
+  template:
+    metadata:
+      name: anupam-test-pod
+      labels:
+        app: anupam-test # Define labels for pod identification
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.23.4  # Replace with specific version if needed (recommended)
+        imagePullPolicy: Never  # Explicitly set to Never
+      restartPolicy: Always  # Restarts the pod automatically on failure
+
